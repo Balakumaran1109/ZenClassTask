@@ -1,0 +1,180 @@
+                                                            Day 07:ARRAY METHODS
+
+
+1) Solving problems using array functions on the rest countries' data (https://restcountries.com/v3.1/all).
+
+a) Get all the countries from the Asia continent /region using the Filter function
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restcountries</title>
+</head>
+<body>
+    <script>
+     function handleData(){
+                let data = JSON.parse(this.responseText)
+                const req = new XMLHttpRequest();
+
+                let Asiacountries = data.filter(e=>e.continents=='Asia')
+                Asiacountries.forEach(e=>console.log(e.name.common))
+                
+     } 
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+    </script>
+    
+</body>
+</html>
+
+
+
+b) Get all the countries with a population of less than 2 lakhs using Filter function
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restcountries</title>
+</head>
+<body>
+    <script>
+     function handleData(){
+                let data = JSON.parse(this.responseText)
+                const req = new XMLHttpRequest();
+
+                let population = data.filter(e=>e.population<20000)
+                population.forEach(e=>console.log(e.population))
+     } 
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+    </script>
+    
+</body>
+</html>
+
+
+C) Print the following details name, capital, flag using forEach function
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restcountries</title>
+</head>
+<body>
+    <script>
+     function handleData(){
+                let data = JSON.parse(this.responseText)
+                const req = new XMLHttpRequest();
+
+              data.forEach(e=>{
+                let name = e.name.common 
+                let capital = e.capital
+                let flag = e.flag
+
+                console.log(`Name:${name}`);
+                console.log(`Capital:${capital}`)
+                console.log(`Flag:${flag}`)
+              })
+            
+     } 
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+    </script>
+    
+</body>
+</html>
+
+
+
+d) Print the total population of countries using reduce function
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restcountries</title>
+</head>
+<body>
+    <script>
+     function handleData(){
+                let data = JSON.parse(this.responseText)
+                const req = new XMLHttpRequest();
+
+          let totalpopulation = data.reduce((accumulator,country)=>{
+            if(country.population){
+            return accumulator + country.population}
+            else{
+                return accumulator
+            }
+          },0)
+          console.log(`Total Population:${totalpopulation}`)
+     } 
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+    </script>
+    
+</body>
+</html>
+
+
+
+
+e) Print the country which uses US Dollars as currency
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restcountries</title>
+</head>
+<body>
+    <script>
+     function handleData(){
+                let data = JSON.parse(this.responseText)
+                const req = new XMLHttpRequest();
+
+                let usdollarcountries = data.filter(country=>{
+                    let currency = country.currencies
+                    if(currency && currency.USD){
+                    return true}
+                    else
+                    return false
+                })
+                usdollarcountries.forEach(e=>console.log(e.name.common))
+
+
+     } 
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v3.1/all")
+            req.send()
+    </script>
+    
+</body>
+</html>
