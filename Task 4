@@ -1,0 +1,39 @@
+2) Do the below programs in arrow functions.
+a. Print odd numbers in an array
+
+let oddnumber = (N)=>{
+    if(N%2!==0){
+        console.log("odd number")
+    }else{
+        return false
+    }
+}
+oddnumber(8)
+
+
+
+b. Convert all the strings to title caps in a string array
+
+
+ let arrayofstring = ["hello world", "hii guvi ", "zen class"]
+
+ let split = arrayofstring.map(string =>{
+    let words = string.split(" ")
+    let titlecaps = words.map(word=> word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    return titlecaps.join(" ")
+}) 
+console.log(split)
+
+
+
+c. Sum of all numbers in an array
+
+
+let array = [1,2,3,4,5]
+let sum = 0
+array.forEach(e=>{
+    sum = sum+e
+})
+
+console.log(sum)
+
