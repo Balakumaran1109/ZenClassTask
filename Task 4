@@ -1,3 +1,182 @@
+Do the below programs in anonymous function & IIFE
+
+a. Print odd numbers in an array
+
+USING ANONYMOUS FUNCTION:
+
+let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let oddnumber = numberArray.filter(function(number) {
+  if (number % 2 !== 0) {
+    return true
+  }
+});
+console.log(oddnumber);
+
+
+USING IIFE FUNCTION:
+
+let numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let oddnumber = (function(){
+   return numberArray.filter(function(number) {
+  if (number % 2 !== 0) {
+    return true
+  }
+});
+})()
+console.log(oddnumber);
+
+
+
+b. Convert all the strings to title caps in a string array
+
+USING ANONYMOUS FUNCTION:
+
+let A = ["hello", "guvi", "zen", "class"]
+
+let splitwords = A.map(function(e){
+   let words = e.split(" ")
+    
+let titlecaps = words.map(function(e){
+   return e.charAt(0).toUpperCase() + e.slice(1).toLowerCase()
+    
+})
+return titlecaps.join()
+})
+console.log(splitwords)
+
+
+USING IIFE FUNCTION:
+
+let A = ["hello", "guvi", "zen", "class"]
+
+let titlearray = (function(){
+   return A.map(function(e){
+   let words = e.split(" ")
+    
+let titlecaps = words.map(function(e){
+   return e.charAt(0).toUpperCase() + e.slice(1).toLowerCase()
+    
+})
+return titlecaps.join(" ")
+})
+})()
+console.log(titlearray)
+
+
+
+c. Sum of all numbers in an array
+
+USING ANONYMOUS FUNCTION:
+
+let A = [1,2,3,4,5,6,6,7,9]
+
+let sum = 0
+
+    A.forEach(function(N){
+    sum = sum + N
+    return sum
+    })
+    
+    console.log(sum)
+    
+    
+ USING IIFE FUNCTION:
+ 
+ let add = (function(f){
+    let sum = 0
+    f.forEach(function(N){
+    sum = sum + N
+    })
+    return sum
+    
+    })([1,2,3,4,4,5])
+    
+    console.log(add)
+
+
+
+
+d. Return all the prime numbers in an array
+
+USING ANONYMOUS FUNCTION:
+
+let A = [1,2,3,4,5,6,7,8,9]
+let primeNumbers = A.filter(function(e){
+      if(e>1 && e%2!==0 || e==2){
+      return true
+      }
+    })
+console.log(primeNumbers)
+
+
+USING IIFE FUNCTION:
+ 
+ let A = [1,2,3,4,5,6,7,8,9]
+let primeNumbers = (function(){
+  return A.filter(function(e){
+       if(e>1 && e%2!==0 || e==2){
+      return true
+      }
+    })
+})()
+console.log(primeNumbers)
+
+
+
+e. Return all the palindromes in an array
+
+USING ANONYMOUS FUNCTION:
+
+let A = ['malayalam', 'kerala', 'level', 'good']
+let result = []
+let palindrome = A.forEach(function(words){
+    let reversewords = words.split("").reverse().join("")
+    if(reversewords==words){
+        result.push(words)
+    }
+})
+console.log(result)
+
+
+USING IIFE FUNCTION:
+
+let A = ['malayalam', 'kerala', 'level', 'good']
+let palindrome = (function(){
+    let result = []
+    
+ A.forEach(function(words){
+    let reversewords = words.split("").reverse().join("")
+    if(reversewords==words){
+        result.push(words)
+    }
+    })
+    return result
+})()
+console.log(palindrome)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2) Do the below programs in arrow functions.
 a. Print odd numbers in an array
 
@@ -36,4 +215,37 @@ array.forEach(e=>{
 })
 
 console.log(sum)
+
+
+
+d. Return all the prime numbers in an array
+
+
+let A = [1,2,3,4,5,6,7,8,9,10]
+ let primeNumbers =(P=>{
+     if(P>0 && P!==1 && P%2!==0 ||P==2){
+        // console.log(primeNumbers)
+        return true}
+     else
+         return false
+     
+ })
+ let prime = A.filter(f=>primeNumbers(f))
+ console.log(prime)
+ 
+ 
+ 
+e. Return all the palindromes in an array
+ 
+ 
+ let A =["guvi", "level", "study","radar", "madam"]
+
+let palindrome = string=>{
+    let reverse = string.split("").reverse().join("")
+    return string===reverse
+}
+    let result = A.filter(f=>palindrome(f))
+    console.log(result)
+
+
 
