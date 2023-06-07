@@ -1,4 +1,4 @@
-Do the below programs in anonymous function & IIFE
+                                             Do the below programs in anonymous function & IIFE
 
 a. Print odd numbers in an array
 
@@ -12,6 +12,7 @@ let oddnumber = numberArray.filter(function(number) {
   }
 });
 console.log(oddnumber);
+
 
 
 USING IIFE FUNCTION:
@@ -45,6 +46,7 @@ let titlecaps = words.map(function(e){
 return titlecaps.join()
 })
 console.log(splitwords)
+
 
 
 USING IIFE FUNCTION:
@@ -82,6 +84,7 @@ let sum = 0
     console.log(sum)
     
     
+    
  USING IIFE FUNCTION:
  
  let add = (function(f){
@@ -97,7 +100,6 @@ let sum = 0
 
 
 
-
 d. Return all the prime numbers in an array
 
 USING ANONYMOUS FUNCTION:
@@ -109,6 +111,7 @@ let primeNumbers = A.filter(function(e){
       }
     })
 console.log(primeNumbers)
+
 
 
 USING IIFE FUNCTION:
@@ -140,6 +143,7 @@ let palindrome = A.forEach(function(words){
 console.log(result)
 
 
+
 USING IIFE FUNCTION:
 
 let A = ['malayalam', 'kerala', 'level', 'good']
@@ -158,19 +162,105 @@ console.log(palindrome)
 
 
 
+f. Return median of two sorted arrays of the same size
+
+USING ANONYMOUS FUNCTION:
+
+let A = [1,2,3,4]
+let B = [8,7,6,5]
+
+let median = (function(A1,B1){
+    let arrayAB = A1.concat(B1)
+   let AB = arrayAB.sort()
+    let midindex = AB.length/2
+    return (AB[midindex-1]+AB[midindex])/2
+})
+result = median(A, B)
+console.log(result)
 
 
 
+USING IIFE FUNCTION:
+
+let A = [1,2,3,4]
+let B = [8,7,6,5]
+
+let median = (function(){
+ let arrayAB = A.concat(B)
+ let AB = arrayAB.sort()
+    let midindex = AB.length/2
+    return (AB[midindex-1]+AB[midindex])/2
+})()
+console.log(median)
 
 
 
+g. Remove duplicates from an array
+
+USING ANONYMOUS FUNCTION:
+
+let A = [1,2,3,4,5,6,5,3]
+let duplicates = (function(array){
+    result = []
+    array.forEach(function(e){
+        if(!result.includes(e)){
+           result.push(e)
+        return result
+        }
+    })
+})
+duplicates(A)
+console.log(result)
 
 
 
+USING IIFE FUNCTION:
+
+let A = [1,2,3,4,5,6,5,3]
+let duplicates = (function(){
+    result = []
+  return A.forEach(e=>{
+        if(!result.includes(e)){
+          result.push(e)
+        return result
+        }
+    })
+    
+})()
+console.log(result)
 
 
 
+h) Rotate an array by k times:
 
+USING ANONYMOUS FUNCTION:
+
+let A = [1,2,3,4,5,6,7,8]
+let k = 2
+
+let arrayRotation = (function(array, ktimes) {
+    rotation = ktimes % array.length
+let rotate = array.slice(rotation).concat(array.slice(0,rotation))
+return rotate
+
+})
+result = arrayRotation(A,k)
+console.log(result)
+
+
+
+USING IIFE FUNCTION:
+
+let A = [1,2,3,4,5,6,7,8]
+let k = 2
+
+let arrayRotation = (function() {
+    rotation = k % A.length
+let rotate = A.slice(rotation).concat(A.slice(0,rotation))
+return rotate
+
+})()
+console.log(arrayRotation)
 
 
 
