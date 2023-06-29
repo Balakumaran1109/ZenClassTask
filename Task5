@@ -1,0 +1,79 @@
+1. For the given JSON iterate over all for loops(for,for in,for of,foreach)
+
+let JSON1 = [
+    {
+       name : "Rahul",
+       age : 24,
+       mobile : [9874563211,9877894562]
+},
+    {
+        name : "sasi",
+        age : 23,
+        mobile : [7894561233,8547994126]
+        
+    }
+]
+
+for (i=0; i<JSON1.length; i++){
+    console.log(JSON1[i])
+}
+
+for (let x in JSON1){
+ console.log(JSON1[x])
+}
+
+for ( let e of JSON1 ){
+    console.log(e)
+}
+
+ JSON1.forEach((i)=>{
+ console.log(i)
+   })
+
+Output:
+
+{ name: 'Rahul', age: 24, mobile: [ 9874563211, 9877894562 ] }
+{ name: 'sasi', age: 23, mobile: [ 7894561233, 8547994126 ] }
+
+
+
+
+
+2. Create your own resume data in JSON format
+
+let Resume = [
+    
+    Details:{
+        name:"Balakumaran",
+        mobile:"790415156",
+        email:"balakumaran1109@gmail.com",
+         },
+         
+    Education:[ 
+        {
+        course:"sslc",
+        institute:"sbv",
+        percentage:"94",
+    },
+    {
+        course:"hsc",
+        institute:"sbv",
+        percentage:"87"
+    },
+    {
+        course:"B.tech(Mech)",
+        institute:"RGCET",
+        percentage:"82"
+    }],
+    
+    Projects:{
+        project1:"Design and fabrication of Go kart",
+        project2:"Solar still distillation"
+    },
+    
+    Skills:{
+        programming:"c,c++,java",
+    },
+
+    Declaration:["I hereby certify that all the information provided here is correct to my knowledge and belief"]
+]
