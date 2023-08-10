@@ -1,0 +1,17 @@
+3) Write a “person” class to hold all the details.
+
+class Person{
+    constructor(name, age, dob, mobile, email){
+        this.name = name;
+        this.age = age;
+        this.dob = dob;
+        this.mobile = mobile;
+        this.email = email;
+    }
+
+        getDetails(){
+            console.log(`Name : ${this.name}, Age : ${this.age}, DOB : ${this.dob}, Mobile : ${this.mobile}, Email : ${this.email}`)
+        }
+    }
+    let obj = new Person("john", 24, "22/12/1998", 8281769984, "john22@gmail.com")
+    obj.getDetails()
