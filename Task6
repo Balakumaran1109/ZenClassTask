@@ -13,7 +13,6 @@ class Movie {
     }
 }
 
-// Example usage
 const movie1 = new Movie("Inception", "Warner Bros.", "PG-13");
 const movie2 = new Movie("The Dark Knight", "Warner Bros.");
 const movie3 = new Movie("Finding Nemo", "Pixar", "G");
