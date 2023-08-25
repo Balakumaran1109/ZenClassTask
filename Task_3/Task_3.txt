@@ -1,0 +1,105 @@
+1) To compare two json without order
+
+var json1 = {"name" : "bala", "age" : 24}
+var json2 = {"name" : "bala", "age" : 24}
+
+// convert json to object
+
+var obj1 = JSON.parse(json1)
+var obj2 = JSON.parse(json2)
+// compare the length of the property
+
+function compareObjectProperty(){
+if(Object.keys(obj1).length != Object.keys(obj2).length){
+return false
+}
+
+// compare the actual key and value
+
+for(var i in obj1){
+if(!obj2.hasOwnProperty(i) || obj1[i]!==obj2[i]){
+    return false
+}
+}
+return true
+}
+
+let result = compareObjectProperty()
+console.log(result)
+
+
+
+2) To display flag in the console (XMLHttpRequest)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+
+    let xhr = new XMLHttpRequest()
+
+let method = "GET"
+
+let url = "https://restcountries.com/v3.1/all"
+
+xhr.open(method, url, true)
+
+xhr.onload = function(){
+  if(xhr.status == 200){
+    var response = JSON.parse(xhr.responseText)
+    for(var i=0; i<response.length; i++)
+    console.log(response[i].flag)
+    }
+    else{
+    console.log('request failed', xhr.status)
+    }
+    }
+    
+    xhr.send()
+</script>
+</body>
+</html>
+
+
+
+3) To display country name, region, subregion, population (XMLHttpRequest)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+
+    let xhr = new XMLHttpRequest()
+
+let method = "GET"
+
+let url = "https://restcountries.com/v3.1/all"
+
+xhr.open(method, url, true)
+
+xhr.onload = function(){
+  if(xhr.status == 200){
+    var response = JSON.parse(xhr.responseText)
+    for(var i=0; i<response.length; i++)
+    console.log(response[i].name.common, response[i].region, response[i].subregion, response[i].population)
+    }
+    else{
+    console.log('request failed', xhr.status)
+    }
+    }
+    
+    xhr.send()
+</script>
+</body>
+</html>
+  
