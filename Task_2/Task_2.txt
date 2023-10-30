@@ -1,26 +1,34 @@
 1. Write a blog difference between window and document objects
 
+Window vs Document Objects
+     In JavaScript, the window object is the global object for a browser window or frame, while the document object represents the HTML document loaded in that window or frame. Both objects have properties and methods that can be used to manipulate the content and behavior of a web page.
 
-WINDOW OBJECT
+Window Object
+     The window object is the top-level object in a JavaScript program. It has many properties that can be used to access and manipulate the browser window, including:
 
-● It is the top most object and
-outermost element of the object
-hierarchy .
-● It represents a window/tab
-containing a DOM document where
-as document object is property of
-window object that points to the
-DOM document loaded in that
-window.
+innerWidth: The inner width of the browser window, in pixels.
+innerHeight: The inner height of the browser window, in pixels.
+location: The location of the current page, as a URL.
+document: The document object for the current page.
 
+    The window object also has a number of methods that can be used to perform actions, such as:
+open(): Opens a new window or frame.
+close(): Closes the current window or frame.
+resize(): Resizes the current window or frame.
+scroll() Scrolls the current window or frame.
 
-DOCUMENT OBJECT
+Document Object
+    The document object represents the HTML document loaded in a browser window or frame. It has many properties that can be used to access and manipulate the elements of a web page, including:
+title: The title of the document.
+body: The body of the document.
+getElementsByTagName(): Returns a collection of elements with a given tag name.
+getElementById(): Returns an element with a given ID.
 
-● Each HTML document that gets
-loaded into a window becomes a
-document object.
-● Can access a document object
-either using window.document
-property or using document object
-directly as window is global object.
+    The document object also has a number of methods that can be used to perform actions, such as:
+createElement(): Creates a new element.
+appendChild(): Adds an element to the document.
+removeChild(): Removes an element from the document.
+setAttribute(): Sets an attribute for an element.
 
+Difference Between Window and Document Objects
+    The main difference between the window object and the document object is that the window object represents the browser window or frame, while the document object represents the HTML document loaded in that window or frame. The window object has properties and methods that can be used to manipulate the browser window, while the document object has properties and methods that can be used to manipulate the elements of a web page.

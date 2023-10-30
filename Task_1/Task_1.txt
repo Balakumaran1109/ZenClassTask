@@ -7,6 +7,7 @@ that blocks all the requests
 behind it until it doesn’t get its all
 resources.
 ● It compresses data by itself.
+● It takes more time to load the page.
 
 HTTP2
 ● It works on the binary protocol
@@ -15,14 +16,23 @@ TCP connection is required for
 multiple requests.
 ● It uses HPACK for data
 compression.
+● It takes less time to load the page.
+● It can improve the reliability of web connections by reducing the number of errors that occur.
+● It can reduce the amount of data that is transferred between the web server and the web client.
 
 
 2. Write a blog about objects and its internal representation in Javascript
 
-   Objects, in JavaScript, are the most important data type and form the building
-blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive
-data types (Number, String, Boolean, null, undefined, and symbol) in the sense that these
-primitive data types all store a single value each (depending on their types).
+Objects in JavaScript
+     ● Objects are one of the fundamental data types in JavaScript. They are used to store data and functionality, and they are a key part of the JavaScript programming language.
+     
+      ● Objects, in JavaScript, are the most important data type and form the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data types (Number, String, Boolean, null, undefined, and symbol) in the sense that these primitive data types all store a single value each (depending on their types).
+
+Internal Representation of Objects
+     ● In JavaScript, objects are represented as a collection of properties. Each property has a name and a value, and the value can be any type of data, including other objects.
+     ● The properties of an object are stored in a property table. The property table is a dictionary that maps property names to property values.
+     ● The property table is located in the object's memory address. The memory address is a unique identifier that is used to access the object in memory.
+
 
 Syntax:
 new Object(value)
