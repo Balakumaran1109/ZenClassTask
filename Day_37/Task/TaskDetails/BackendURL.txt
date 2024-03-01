@@ -1,0 +1,8 @@
+Render Deployed URL : https://file-creation-task.onrender.com
+
+
+API ENDPOINTS: 
+
+For File Creation : https://file-creation-task.onrender.com/createFile
+
+For File Reading : https://file-creation-task.onrender.com/readFiles 
