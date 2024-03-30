@@ -10,7 +10,7 @@ function Create() {
     address: { street: "", suite: "", city: "", zipcode: "" },
     phone: "",
     website: "",
-    company: "",
+    company: { companyName: "", role: "", details: "" },
   });
 
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Create() {
     e.preventDefault();
 
     axios
-      .post('https://jsonplaceholder.typicode.com/users', inputData)
+      .post("https://65f1213ada8c6584131cea32.mockapi.io/users", inputData)
       .then(() => {
         alert("Data Added successfully");
         navigate("/");
@@ -153,26 +153,26 @@ function Create() {
               <br></br>
 
               <div>
-                <label htmlFor="name">PHONE:</label>
+                <label htmlFor="phone">PHONE:</label>
                 <input
-                  name="name"
+                  name="phone"
                   type="text"
                   className="form-control"
                   onChange={(e) =>
-                    setInputData({ ...inputData, name: e.target.value })
+                    setInputData({ ...inputData, phone: e.target.value })
                   }
                 ></input>
               </div>
               <br></br>
 
               <div>
-                <label htmlFor="name">WEBSITE:</label>
+                <label htmlFor="website">WEBSITE:</label>
                 <input
-                  name="name"
+                  name="website"
                   type="text"
                   className="form-control"
                   onChange={(e) =>
-                    setInputData({ ...inputData, name: e.target.value })
+                    setInputData({ ...inputData, website: e.target.value })
                   }
                 ></input>
               </div>
