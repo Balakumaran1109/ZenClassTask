@@ -14,8 +14,7 @@ const Mentor = require("./Models/mentor");
 
 const Student = require("./Models/student");
 
-const DB_URL =
-  "mongodb+srv://balakumaran1109:bala123@cluster0.mbvsbxk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const DB_URL = process.env.DB_URL;
 
 mongoose
   .connect(DB_URL, {})
