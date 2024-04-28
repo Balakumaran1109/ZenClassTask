@@ -23,6 +23,10 @@ mongoose
 
 app.use(body_parser.json());
 
+app.get("/", (req, res) => {
+  res.send("Working good");
+});
+
 // API to create Mentor
 app.post("/mentor", async (req, res) => {
   try {
